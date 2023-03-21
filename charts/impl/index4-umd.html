@@ -36,12 +36,14 @@
                                         ],
                                         datasets: [
                                                 {
-                                                        label: "SPECjvm score (blacklisted 0) (whitelisted 0+0)",
-                                                        fillColor: "#FF0000",
-                                                        strokeColor: "#FF0000",
-                                                        pointStrokeColor: "#808080",
-                                                        pointHighlightFill: "#fff",
-                                                        pointHighlightStroke: "rgba(0,0,0,1)",
+                                                        label: "SPECjvm score",
+                                                        fill: true,
+                                                        backgroundColor: "#FF0000",
+                                                        borderColor: "#FF0000",
+                                                        pointBorderColor: "#808080",
+                                                        pointHoverBackgroundColor: "#fff",
+                                                        pointHoverBorderColor: "rgba(0,0,0,1)",
+                                                        pointRadius: 5,
                                                         data: [
 
                                                                 726,
@@ -59,24 +61,6 @@
                                                                 728,
                                                                 725,
                                                                 731
-                                                        ],
-                                                        coloredTips: [
-
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000",
-                                                                "#FF0000"
                                                         ]
                                                 }
                                         ]
@@ -124,12 +108,14 @@
                                                 datasets: [
                                                         {
                                                                 label: "Installed",
-                                                                fillColor: "rgba(128,255,128,0.2)",
-                                                                strokeColor: "rgba(128,255,128,1)",
-                                                                pointColor: "rgba(128,255,128,1)",
-                                                                pointStrokeColor: "#fff",
-                                                                pointHighlightFill: "#fff",
-                                                                pointHighlightStroke: "rgba(128,255,128,1)",
+                                                                fill: true,
+                                                                backgroundColor: "rgba(128,255,128,0.2)",
+                                                                borderColor: "rgba(128,255,128,1)",
+                                                                pointBackgroundColor: "rgba(128,255,128,1)",
+                                                                pointBorderColor: "#fff",
+                                                                pointHoverBackgroundColor: "#fff",
+                                                                pointHoverBorderColor: "rgba(128,255,128,1)",
+                                                                pointRadius: 5,
                                                                 data: [
 
                                                                         33,
@@ -146,12 +132,14 @@
                                                         },
                                                         {
                                                                 label: "Remvoed",
-                                                                fillColor: "rgba(255,128,128,0.2)",
-                                                                strokeColor: "rgba(255,128,128,1)",
-                                                                pointColor: "rgba(255,128,128,1)",
-                                                                pointStrokeColor: "#fff",
-                                                                pointHighlightFill: "#fff",
-                                                                pointHighlightStroke: "rgba(255,128,128,1)",
+                                                                fill: true,
+                                                                backgroundColor: "rgba(255,128,128,0.2)",
+                                                                borderColor: "rgba(255,128,128,1)",
+                                                                pointBackgroundColor: "rgba(255,128,128,1)",
+                                                                pointBorderColor: "#fff",
+                                                                pointHoverBackgroundColor: "#fff",
+                                                                pointHoverBorderColor: "rgba(255,128,128,1)",
+                                                                pointRadius: 5,
                                                                 data: [
 
                                                                         17,
@@ -168,12 +156,14 @@
                                                         },
                                                         {
                                                                 label: "Total",
-                                                                fillColor: "rgba(128,128,128,0.2)",
-                                                                strokeColor: "rgba(128,128,128,1)",
-                                                                pointColor: "rgba(128,128,128,1)",
-                                                                pointStrokeColor: "#fff",
-                                                                pointHighlightFill: "#fff",
-                                                                pointHighlightStroke: "rgba(128,128,128,1)",
+                                                                fill: true,
+                                                                backgroundColor: "rgba(128,128,128,0.2)",
+                                                                borderColor: "rgba(128,128,128,1)",
+                                                                pointBackgroundColor: "rgba(128,128,128,1)",
+                                                                pointBorderColor: "#fff",
+                                                                pointHoverBackgroundColor: "#fff",
+                                                                pointHoverBorderColor: "rgba(128,128,128,1)",
+                                                                pointRadius: 5,
                                                                 data: [
 
                                                                         1474,
@@ -192,7 +182,10 @@
                                         },
                                         options: {
                                                 bezierCurve: false,
-                                                multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>"
+                                                multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
+                                        plugins: {
+                                                legend: {display:false}
+                                        }
                                         }
                                 };
                                 // Get the context of the canvas element we want to select
@@ -236,12 +229,14 @@
                                         datasets: [
                                                 {
                                                         label: "Error",
-                                                        fillColor: "rgba(255,0,255,0.2)",
-                                                        strokeColor: "rgba(255,0,255,1)",
-                                                        pointColor: "rgba(255,0,255,1)",
-                                                        pointStrokeColor: "#fff",
-                                                        pointHighlightFill: "#fff",
-                                                        pointHighlightStroke: "rgba(255,0,255,1)",
+                                                        fill: true,
+                                                        backgroundColor: "rgba(255,0,255,0.2)",
+                                                        borderColor: "rgba(255,0,255,1)",
+                                                        pointBackgroundColor: "rgba(255,0,255,1)",
+                                                        pointBorderColor: "#fff",
+                                                        pointHoverBackgroundColor: "#fff",
+                                                        pointHoverBorderColor: "rgba(255,0,255,1)",
+                                                        pointRadius: 5,
                                                         data: [
 
                                                                 0,
@@ -258,12 +253,14 @@
                                                 },
                                                 {
                                                         label: "Failed",
-                                                        fillColor: "rgba(255,0,0,0.2)",
-                                                        strokeColor: "rgba(255,0,0,1)",
-                                                        pointColor: "rgba(255,0,0,1)",
-                                                        pointStrokeColor: "#fff",
-                                                        pointHighlightFill: "#fff",
-                                                        pointHighlightStroke: "rgba(255,0,0,1)",
+                                                        fill: true,
+                                                        backgroundColor: "rgba(255,0,0,0.2)",
+                                                        borderColor: "rgba(255,0,0,1)",
+                                                        pointBackgroundColor: "rgba(255,0,0,1)",
+                                                        pointBorderColor: "#fff",
+                                                        pointHoverBackgroundColor: "#fff",
+                                                        pointHoverBorderColor: "rgba(255,0,0,1)",
+                                                        pointRadius: 5,
                                                         data: [
 
                                                                 0,
@@ -282,7 +279,10 @@
                                 },
                                 options: {
                                         bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>"
+                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
+                                        plugins: {
+                                                legend: {display:false}
+                                        }
                                 }
                         }
                         var ctx = document.getElementById("jckErrorsFailuresChart").getContext("2d");
@@ -315,12 +315,14 @@
                                         datasets: [
                                                 {
                                                         label: "Tests total",
-                                                        fillColor: "rgba(180,180,180,0.2)",
-                                                        strokeColor: "rgba(180,180,180,1)",
-                                                        pointColor: "rgba(180,180,180,1)",
-                                                        pointStrokeColor: "#fff",
-                                                        pointHighlightFill: "#fff",
-                                                        pointHighlightStroke: "rgba(180,180,180,1)",
+                                                        fill: true,
+                                                        backgroundColor: "rgba(150,150,150,0.2)",
+                                                        borderColor: "rgba(150,150,150,1)",
+                                                        pointBackgroundColor: "rgba(150,150,150,1)",
+                                                        pointBorderColor: "#fff",
+                                                        pointHoverBackgroundColor: "#fff",
+                                                        pointHoverBorderColor: "rgba(150,150,150,1)",
+                                                        pointRadius: 5,
                                                         data: [
 
                                                                 11885,
@@ -329,20 +331,21 @@
                                                                 13093,
                                                                 26074,
                                                                 26090,
-                                                                20012,
-                                                                20012,
-                                                                20012,
+                                                                26012,
+                                                                26012,
+                                                                26012,
                                                                 26012
                                                         ]
                                                 },
                                                 {
                                                         label: "Runned tests",
-                                                        fillColor: "rgba(180,180,180,0.2)",
-                                                        strokeColor: "rgba(180,180,180,1)",
-                                                        pointColor: "rgba(180,180,180,1)",
-                                                        pointStrokeColor: "#fff",
-                                                        pointHighlightFill: "#fff",
-                                                        pointHighlightStroke: "rgba(180,180,180,1)",
+                                                        backgroundColor: "rgba(200,0,0,0.2)",
+                                                        borderColor: "rgba(200,0,0,1)",
+                                                        pointBackgroundColor: "rgba(200,0,0,1)",
+                                                        pointBorderColor: "#fff",
+                                                        pointHoverBackgroundColor: "#fff",
+                                                        pointHoverBorderColor: "rgba(200,0,0,1)",
+                                                        pointRadius: 5,
                                                         data: [
 
                                                                 11841,
@@ -351,9 +354,9 @@
                                                                 13051,
                                                                 26032,
                                                                 26048,
-                                                                26012,
-                                                                26012,
-                                                                26012,
+                                                                20012,
+                                                                20012,
+                                                                20012,
                                                                 26012
                                                         ]
                                                 }
@@ -361,7 +364,10 @@
                                 },
                                 options: {
                                         bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>"
+                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
+                                        plugins: {
+                                                legend: {display:false}
+                                        }
                                 }
                         };
                         var ctx = document.getElementById("jckPassedChart").getContext("2d");
@@ -394,10 +400,13 @@
                                         datasets: [
                                                 {
                                                         label: "Improvements",
-                                                        fillColor: "rgba(0,220,0,0.5)",
-                                                        strokeColor: "rgba(0,220,0,0.8)",
-                                                        highlightFill: "rgba(0,220,0,0.75)",
-                                                        highlightStroke: "rgba(0,220,0,1)",
+                                                        backgroundColor: "rgba(0,220,0,0.5)",
+                                                        borderColor: "rgba(0,220,0,0.8)",
+                                                        borderWidth:2,
+                                                        minBarLength:2,
+                                                        barThickness:20,
+                                                        hoverBackgroundColor: "rgba(0,220,0,0.75)",
+                                                        hoverBorderColor: "rgba(0,220,0,1)",
                                                         data: [
 
                                                                 0,
@@ -414,10 +423,13 @@
                                                 },
                                                 {
                                                         label: "Regressions",
-                                                        fillColor: "rgba(220,0,0,0.5)",
-                                                        strokeColor: "rgba(220,0,0,0.8)",
-                                                        highlightFill: "rgba(220,0,0,0.75)",
-                                                        highlightStroke: "rgba(220,0,0,1)",
+                                                        backgroundColor: "rgba(220,0,0,0.5)",
+                                                        borderColor: "rgba(220,0,0,0.8)",
+                                                        borderWidth:2,
+                                                        minBarLength:2,
+                                                        barThickness:20,
+                                                        hoverBackgroundColor: "rgba(220,0,0,0.75)",
+                                                        hoverBorderColor: "rgba(220,0,0,1)",
                                                         data: [
 
                                                                 0,
@@ -436,7 +448,10 @@
                                 },
                                 options: {
                                         bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>"
+                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
+                                        plugins: {
+                                                legend: {display:false}
+                                        }
                                 }
                         };
                         var ctx = document.getElementById("jckRegressionsChart").getContext("2d");
