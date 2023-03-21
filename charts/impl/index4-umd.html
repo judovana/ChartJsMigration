@@ -83,7 +83,10 @@
                                 },
                                 options: {
                                         bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>"
+                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
+                                        plugins: {
+                                                legend: {display:false}
+                                        }
                                 }
                         };
                         var ctx = document.getElementById("chart0").getContext("2d");
