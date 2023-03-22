@@ -6,7 +6,7 @@
 <body>
         <h6 onclick="document.getElementById('main').style.float='none'">click to don't see size issue</h6>
         <div id="main" style="float:right">
-                <script type="text/javascript">var jckPassedChart = {}; var buildsMap = {};</script>
+                <script type="text/javascript">var jckPassedChart = {}; </script>
                 <h3 style="font-family: monospace">SPECjvm score (blacklisted 0) (whitelisted 0+0)</h3>
                 <div style="margin-right: 10pt" id="chartContainer0"><canvas width="600" id="chart0"
                                 height="600"></canvas>
@@ -73,23 +73,23 @@
                                                 mode: 'index',
                                                 intersect: false
                                         },
-                                        hover: {
-
-                                        },
-
+                                        onClick: (e) => {
+                                                var activePoints = jckPassedChart["chart0"].getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var point = activePoints[0]
+                                                var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
+                                                var index = point.index
+                                                var result = jckPassedChart["chart0"].config.data.labels[index]
+                                                var buildId = result.substring(result.lastIndexOf(":")+1)
+                                                window.open(""+buildId, "_blank");
+                                        }
                                 }
                         };
                         var ctx = document.getElementById("chart0").getContext("2d");
                         jckPassedChart["chart0"] = new Chart(ctx, allPerf)
-                        buildsMap["11.0.14.0.9-5.el8:100"] = "100"; buildsMap["11.0.14.0.9-6.el8:101"] = "101"; buildsMap["11.0.14.1.1-1.el8:102"] = "102"; buildsMap["11.0.14.1.1-4.el8:103"] = "103"; buildsMap["11.0.14.1.1-3.el8:104"] = "104"; buildsMap["11.0.14.1.1-5.el8:108"] = "108"; buildsMap["11.0.14.1.1-6.el8:111"] = "111"; buildsMap["11.0.15.0.10-3.el8:112"] = "112"; buildsMap["11.0.16.0.8-2.el8:113"] = "113"; buildsMap["11.0.16.1.1-2.el8:114"] = "114"; buildsMap["11.0.16.1.1-3.el8:115"] = "115"; buildsMap["11.0.17.0.8-2.el8:116"] = "116"; buildsMap["11.0.17.0.8-2.el8:117"] = "117"; buildsMap["11.0.18.0.9-0.3.ea.el8:118"] = "118"; buildsMap["11.0.18.0.10-3.el8:119"] = "119";
-                        document.getElementById("chartContainer0").onclick = function (evt) {
-                                var activePoints = jckPassedChart["chart0"].getPointsAtEvent(evt);
-                                window.open(buildsMap[activePoints[0].label], "_blank");
-                        };
         // ]]>
                 </script>
                 <div id="topLevelChartContainer">
-                        <script type="text/javascript">var diffChartClick = {}; var diffBuildMap = {};</script>
+                        <script type="text/javascript">var diffChartClick = {};</script>
                         <h3 style="font-family: monospace">RPM Changes</h3>
                         <div id="rpmsChartContainer-rpms"><canvas id="rpmsChart-rpms"
                                         style="width: 500px; height: 500px;" width="500" height="500"></canvas></div>
@@ -194,16 +194,20 @@
                                                 mode: 'index',
                                                 intersect: false
                                         },
+                                        onClick: (e) => {
+                                                var activePoints = diffChartClick["rpmsChart-rpms"].getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var point = activePoints[0]
+                                                var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
+                                                var index = point.index
+                                                var result = diffChartClick["rpmsChart-rpms"].config.data.labels[index]
+                                                var buildId = result.substring(result.lastIndexOf(":")+1)
+                                                window.open(""+buildId+"/rpms/#rpms", "_blank");
+                                        }
                                         }
                                 };
                                 // Get the context of the canvas element we want to select
                                 var ctx = document.getElementById("rpmsChart-rpms").getContext("2d");
                                 diffChartClick["rpmsChart-rpms"] = new Chart(ctx, allRpms);
-                                diffBuildMap["1.8.0.332.b09-3.el7openjdkportable:37"] = "37"; diffBuildMap["1.8.0.332.b09-3.el7openjdkportable:38"] = "38"; diffBuildMap["1.8.0.342.b07-1.el7openjdkportable:39"] = "39"; diffBuildMap["1.8.0.345.b01-1.el7openjdkportable:41"] = "41"; diffBuildMap["1.8.0.352.b08-1.el7openjdkportable:43"] = "43"; diffBuildMap["1.8.0.362.b08-1.el7openjdkportable:46"] = "46"; diffBuildMap["1.8.0.362.b08-2.el7openjdkportable:47"] = "47"; diffBuildMap["1.8.0.362.b08-3.el7openjdkportable:48"] = "48"; diffBuildMap["1.8.0.362.b08-4.el7openjdkportable:49"] = "49"; diffBuildMap["1.8.0.362.b09-1.el7openjdkportable:50"] = "50";
-                                document.getElementById("rpmsChartContainer-rpms").onclick = function (evt) {
-                                        var activePoints = diffChartClick["rpmsChart-rpms"].getPointsAtEvent(evt);
-                                        window.open(diffBuildMap[activePoints[0].label] + "/rpms/#rpms", "_blank");
-                                };
         // ]]>
                         </script>
                 </div>
@@ -293,16 +297,20 @@
                                         interaction: {
                                                 mode: 'index',
                                                 intersect: false
+                                        },
+                                        onClick: (e) => {
+                                                var activePoints = jckErrorsChart.getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var point = activePoints[0]
+                                                var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
+                                                var index = point.index
+                                                var result = jckErrorsChart.config.data.labels[index]
+                                                var buildId = result.substring(result.lastIndexOf(":")+1)
+                                                window.open(""+buildId+"/java-reports", "_blank");
                                         }
                                 }
                         }
                         var ctx = document.getElementById("jckErrorsFailuresChart").getContext("2d");
                         var jckErrorsChart = new Chart(ctx, allJckFails);
-                        buildsMap["1.8.0.332.b09-3.el7openjdkportable:36"] = "36"; buildsMap["1.8.0.332.b09-3.el7openjdkportable:37"] = "37"; buildsMap["1.8.0.332.b09-3.el7openjdkportable:38"] = "38"; buildsMap["1.8.0.342.b07-1.el7openjdkportable:39"] = "39"; buildsMap["1.8.0.345.b01-1.el7openjdkportable:41"] = "41"; buildsMap["1.8.0.352.b08-1.el7openjdkportable:43"] = "43"; buildsMap["1.8.0.362.b08-2.el7openjdkportable:47"] = "47"; buildsMap["1.8.0.362.b08-3.el7openjdkportable:48"] = "48"; buildsMap["1.8.0.362.b08-4.el7openjdkportable:49"] = "49"; buildsMap["1.8.0.362.b09-1.el7openjdkportable:50"] = "50";
-                        document.getElementById("jckErrorsFailuresChartContainer").onclick = function (evt) {
-                                var activePoints = jckErrorsChart.getPointsAtEvent(evt);
-                                window.open(buildsMap[activePoints[0].label] + "/java-reports", "_blank");
-                        };
         // ]]>
                 </script>
                 <script type="text/javascript">
@@ -380,16 +388,20 @@
                                         interaction: {
                                                 mode: 'index',
                                                 intersect: false
+                                        },
+                                        onClick: (e) => {
+                                                var activePoints = jckPassedChartTck.getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var point = activePoints[0]
+                                                var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
+                                                var index = point.index
+                                                var result = jckPassedChartTck.config.data.labels[index]
+                                                var buildId = result.substring(result.lastIndexOf(":")+1)
+                                                window.open(""+buildId+"/java-reports", "_blank");
                                         }
                                 }
                         };
                         var ctx = document.getElementById("jckPassedChart").getContext("2d");
                         var jckPassedChartTck = new Chart(ctx, allJck);
-                        buildsMap["1.8.0.332.b09-3.el7openjdkportable:36"] = "36"; buildsMap["1.8.0.332.b09-3.el7openjdkportable:37"] = "37"; buildsMap["1.8.0.332.b09-3.el7openjdkportable:38"] = "38"; buildsMap["1.8.0.342.b07-1.el7openjdkportable:39"] = "39"; buildsMap["1.8.0.345.b01-1.el7openjdkportable:41"] = "41"; buildsMap["1.8.0.352.b08-1.el7openjdkportable:43"] = "43"; buildsMap["1.8.0.362.b08-2.el7openjdkportable:47"] = "47"; buildsMap["1.8.0.362.b08-3.el7openjdkportable:48"] = "48"; buildsMap["1.8.0.362.b08-4.el7openjdkportable:49"] = "49"; buildsMap["1.8.0.362.b09-1.el7openjdkportable:50"] = "50";
-                        document.getElementById("jckPassedChartContainer").onclick = function (evt) {
-                                var activePoints = jckPassedChartTck.getPointsAtEvent(evt);
-                                window.open(buildsMap[activePoints[0].label] + "/java-reports", "_blank");
-                        };
         // ]]>
                 </script>
                 <script type="text/javascript">
@@ -464,16 +476,20 @@
                                         interaction: {
                                                 mode: 'index',
                                                 intersect: false
+                                        },
+                                        onClick: (e) => {
+                                                var activePoints = jckRegressions.getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var point = activePoints[0]
+                                                var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
+                                                var index = point.index
+                                                var result = jckRegressions.config.data.labels[index]
+                                                var buildId = result.substring(result.lastIndexOf(":")+1)
+                                                window.open(""+buildId+"/java-reports", "_blank");
                                         }
                                 }
                         };
                         var ctx = document.getElementById("jckRegressionsChart").getContext("2d");
                         var jckRegressions = new Chart(ctx, allJckRegressions);
-                        document.getElementById("jckRegressionsChartContainer").onclick = function (evt) {
-                                buildsMap["1.8.0.332.b09-3.el7openjdkportable:36"] = "36"; buildsMap["1.8.0.332.b09-3.el7openjdkportable:37"] = "37"; buildsMap["1.8.0.332.b09-3.el7openjdkportable:38"] = "38"; buildsMap["1.8.0.342.b07-1.el7openjdkportable:39"] = "39"; buildsMap["1.8.0.345.b01-1.el7openjdkportable:41"] = "41"; buildsMap["1.8.0.352.b08-1.el7openjdkportable:43"] = "43"; buildsMap["1.8.0.362.b08-2.el7openjdkportable:47"] = "47"; buildsMap["1.8.0.362.b08-3.el7openjdkportable:48"] = "48"; buildsMap["1.8.0.362.b08-4.el7openjdkportable:49"] = "49"; buildsMap["1.8.0.362.b09-1.el7openjdkportable:50"] = "50";
-                                var activePoints = jckRegressions.getBarsAtEvent(evt);
-                                window.open(buildsMap[activePoints[0].label] + "/java-reports", "_blank");
-                        };
         // ]]>
                 </script>
         </div>
