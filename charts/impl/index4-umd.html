@@ -66,11 +66,17 @@
                                         ]
                                 },
                                 options: {
-                                        bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
                                         plugins: {
                                                 legend: {display:false}
-                                        }
+                                        },
+                                        interaction: {
+                                                mode: 'index',
+                                                intersect: false
+                                        },
+                                        hover: {
+
+                                        },
+
                                 }
                         };
                         var ctx = document.getElementById("chart0").getContext("2d");
@@ -181,11 +187,13 @@
                                                 ]
                                         },
                                         options: {
-                                                bezierCurve: false,
-                                                multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
                                         plugins: {
                                                 legend: {display:false}
-                                        }
+                                        },
+                                        interaction: {
+                                                mode: 'index',
+                                                intersect: false
+                                        },
                                         }
                                 };
                                 // Get the context of the canvas element we want to select
@@ -278,10 +286,13 @@
                                         ]
                                 },
                                 options: {
-                                        bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
                                         plugins: {
                                                 legend: {display:false}
+                                        }
+                                        ,
+                                        interaction: {
+                                                mode: 'index',
+                                                intersect: false
                                         }
                                 }
                         }
@@ -363,10 +374,12 @@
                                         ]
                                 },
                                 options: {
-                                        bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
                                         plugins: {
                                                 legend: {display:false}
+                                        },
+                                        interaction: {
+                                                mode: 'index',
+                                                intersect: false
                                         }
                                 }
                         };
@@ -403,7 +416,6 @@
                                                         backgroundColor: "rgba(0,220,0,0.5)",
                                                         borderColor: "rgba(0,220,0,0.8)",
                                                         borderWidth:2,
-                                                        minBarLength:2,
                                                         barThickness:20,
                                                         hoverBackgroundColor: "rgba(0,220,0,0.75)",
                                                         hoverBorderColor: "rgba(0,220,0,1)",
@@ -426,7 +438,6 @@
                                                         backgroundColor: "rgba(220,0,0,0.5)",
                                                         borderColor: "rgba(220,0,0,0.8)",
                                                         borderWidth:2,
-                                                        minBarLength:2,
                                                         barThickness:20,
                                                         hoverBackgroundColor: "rgba(220,0,0,0.75)",
                                                         hoverBorderColor: "rgba(220,0,0,1)",
@@ -447,10 +458,12 @@
                                         ]
                                 },
                                 options: {
-                                        bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>",
                                         plugins: {
                                                 legend: {display:false}
+                                        },
+                                        interaction: {
+                                                mode: 'index',
+                                                intersect: false
                                         }
                                 }
                         };
