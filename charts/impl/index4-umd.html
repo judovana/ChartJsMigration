@@ -565,12 +565,17 @@
                                                         ]
                                                 }
                                         ]
-                                }
+                                },
+                                options: {
+                                        plugins: {
+                                                legend: { display: false }
+                                        },
+                                        interaction: {
+                                                mode: 'index',
+                                                intersect: false
+                                        },
                         }
-                                var options = {
-                                        bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>"
-                                };
+                }
                                 var ctx = document.getElementById("jckChart-jtreg~full-jp8-ojdk8~u~upstream-win2012.x86_64-hotspot.release.sdk-win2012.x86_64.vagrant-x11.defaultgc.legacy.lnxagent.jfroff").getContext("2d");
                                 var jckErrorsChart = new Chart(ctx, dataJckView);
                                 document.getElementById("jckChartContainer-jtreg~full-jp8-ojdk8~u~upstream-win2012.x86_64-hotspot.release.sdk-win2012.x86_64.vagrant-x11.defaultgc.legacy.lnxagent.jfroff").onclick = function (evt) {
@@ -639,12 +644,17 @@
                                                 ]
                                         }
                                         ]
+                                },
+                                options: {
+                                        plugins: {
+                                                legend: { display: false }
+                                        },
+                                        interaction: {
+                                                mode: 'index',
+                                                intersect: false
+                                        }
                                 }
                         }
-                                var options = {
-                                        bezierCurve: false,
-                                        multiTooltipTemplate: "<%= datasetLabel + \": \" + value %>"
-                                };
                                 var ctx = document.getElementById("d1cce494-39bb-481d-becc-6a030fbf1e1a-Chart").getContext("2d");
                                 var chart = new Chart(ctx, dataPerfView);
                                 document.getElementById("d1cce494-39bb-481d-becc-6a030fbf1e1a-ChartContainer").onclick = function (evt) {
