@@ -578,18 +578,25 @@
                                                 mode: 'index',
                                                 intersect: false
                                         },
+                                        onClick: (e) => {
+                                                var activePoints = jckErrorsChartView.getElementsAtEventForMode(e, 'index', { intersect: false }, true);
+                                                var point = activePoints[0]
+                                                var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
+                                                var index = point.index
+                                                var result = jckErrorsChartView.config.data.labels[index]
+                                                var buildId = result.substring(result.lastIndexOf(":") + 1) //thsi works even without :; fixme, add NVR?
+                                                window.open("" + buildId + "/java-reports", "_blank");
+                                        }
                         }
                 }
                                 var ctx = document.getElementById("jckChart-jtreg~full-jp8-ojdk8~u~upstream-win2012.x86_64-hotspot.release.sdk-win2012.x86_64.vagrant-x11.defaultgc.legacy.lnxagent.jfroff").getContext("2d");
-                                var jckErrorsChart = new Chart(ctx, dataJckView);
-                                document.getElementById("jckChartContainer-jtreg~full-jp8-ojdk8~u~upstream-win2012.x86_64-hotspot.release.sdk-win2012.x86_64.vagrant-x11.defaultgc.legacy.lnxagent.jfroff").onclick = function (evt) {
-                                        window.open("/view/tasks/view/jdkVersions/view/-jp8/view/win/view/win2012/view/jtreg~full-jp8-win2012.x86_64/job/jtreg%7Efull-jp8-ojdk8%7Eu%7Eupstream-win2012.x86_64-hotspot.release.sdk-win2012.x86_64.vagrant-x11.defaultgc.legacy.lnxagent.jfroff/", "_blank");
-                                };
+                                var jckErrorsChartView = new Chart(ctx, dataJckView);
                 // ]]>
         </script>
         <h1></h1>
         <td>
                 <div>
+                        <script type="text/javascript">var perfChartJsChartsView = {}; </script>
                         <div style="width: 320px; height: 80px"
                                 id="d1cce494-39bb-481d-becc-6a030fbf1e1a-ChartContainer"><canvas width="320"
                                         style="display: block" id="d1cce494-39bb-481d-becc-6a030fbf1e1a-Chart"
@@ -658,14 +665,20 @@
                                         interaction: {
                                                 mode: 'index',
                                                 intersect: false
+                                        },
+                                        onClick: (e) => {
+                                                var activePoints = perfChartJsChartsView["d1cce494-39bb-481d-becc-6a030fbf1e1a-Chart"].getElementsAtEventForMode(e, 'index', { intersect: false }, true);
+                                                var point = activePoints[0]
+                                                var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
+                                                var index = point.index
+                                                var result = perfChartJsChartsView["d1cce494-39bb-481d-becc-6a030fbf1e1a-Chart"].config.data.labels[index]
+                                                var buildId = result.substring(result.lastIndexOf(":") + 1) //thsi works even without :; fixme, add NVR?
+                                                window.open("" + buildId, "_blank");
                                         }
                                 }
                         }
                                 var ctx = document.getElementById("d1cce494-39bb-481d-becc-6a030fbf1e1a-Chart").getContext("2d");
-                                var chart = new Chart(ctx, dataPerfView);
-                                document.getElementById("d1cce494-39bb-481d-becc-6a030fbf1e1a-ChartContainer").onclick = function (evt) {
-                                        window.open("/view/tasks/view/jdkVersions/view/-jp8/view/win/view/jmh-jp8-win2022/job/jmh-jp8-ojdk8%7Eaarch64%7Eshenandoah%7Eupstream-win2012.x86_64-hotspot.release.sdk-win2022.x86_64.vagrant-x11.defaultgc.legacy.lnxagent.jfroff/", "_blank");
-                                };
+                                perfChartJsChartsView["d1cce494-39bb-481d-becc-6a030fbf1e1a-Chart"] = new Chart(ctx, dataPerfView);
                     // ]]>
                         </script>
                 </div>
