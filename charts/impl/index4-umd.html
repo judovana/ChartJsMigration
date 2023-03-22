@@ -6,7 +6,7 @@
 <body>
         <h6 onclick="document.getElementById('main').style.float='none'">click to don't see size issue</h6>
         <div id="main" style="float:right">
-                <script type="text/javascript">var jckPassedChart = {}; </script>
+                <script type="text/javascript">var perfChartJsCharts = {}; </script>
                 <h3 style="font-family: monospace">SPECjvm score (blacklisted 0) (whitelisted 0+0)</h3>
                 <div style="margin-right: 10pt" id="chartContainer0"><canvas width="600" id="chart0"
                                 height="600"></canvas>
@@ -74,18 +74,18 @@
                                                 intersect: false
                                         },
                                         onClick: (e) => {
-                                                var activePoints = jckPassedChart["chart0"].getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var activePoints = perfChartJsCharts["chart0"].getElementsAtEventForMode(e, 'index', {intersect:false},true);
                                                 var point = activePoints[0]
                                                 var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
                                                 var index = point.index
-                                                var result = jckPassedChart["chart0"].config.data.labels[index]
+                                                var result = perfChartJsCharts["chart0"].config.data.labels[index]
                                                 var buildId = result.substring(result.lastIndexOf(":")+1)
                                                 window.open(""+buildId, "_blank");
                                         }
                                 }
                         };
                         var ctx = document.getElementById("chart0").getContext("2d");
-                        jckPassedChart["chart0"] = new Chart(ctx, allPerf)
+                        perfChartJsCharts["chart0"] = new Chart(ctx, allPerf)
         // ]]>
                 </script>
                 <div id="topLevelChartContainer">
