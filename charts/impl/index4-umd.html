@@ -67,20 +67,20 @@
                                 },
                                 options: {
                                         plugins: {
-                                                legend: {display:false}
+                                                legend: { display: false }
                                         },
                                         interaction: {
                                                 mode: 'index',
                                                 intersect: false
                                         },
                                         onClick: (e) => {
-                                                var activePoints = perfChartJsCharts["chart0"].getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var activePoints = perfChartJsCharts["chart0"].getElementsAtEventForMode(e, 'index', { intersect: false }, true);
                                                 var point = activePoints[0]
                                                 var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
                                                 var index = point.index
                                                 var result = perfChartJsCharts["chart0"].config.data.labels[index]
-                                                var buildId = result.substring(result.lastIndexOf(":")+1)
-                                                window.open(""+buildId, "_blank");
+                                                var buildId = result.substring(result.lastIndexOf(":") + 1)
+                                                window.open("" + buildId, "_blank");
                                         }
                                 }
                         };
@@ -187,22 +187,22 @@
                                                 ]
                                         },
                                         options: {
-                                        plugins: {
-                                                legend: {display:false}
-                                        },
-                                        interaction: {
-                                                mode: 'index',
-                                                intersect: false
-                                        },
-                                        onClick: (e) => {
-                                                var activePoints = diffChartClick["rpmsChart-rpms"].getElementsAtEventForMode(e, 'index', {intersect:false},true);
-                                                var point = activePoints[0]
-                                                var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
-                                                var index = point.index
-                                                var result = diffChartClick["rpmsChart-rpms"].config.data.labels[index]
-                                                var buildId = result.substring(result.lastIndexOf(":")+1)
-                                                window.open(""+buildId+"/rpms/#rpms", "_blank");
-                                        }
+                                                plugins: {
+                                                        legend: { display: false }
+                                                },
+                                                interaction: {
+                                                        mode: 'index',
+                                                        intersect: false
+                                                },
+                                                onClick: (e) => {
+                                                        var activePoints = diffChartClick["rpmsChart-rpms"].getElementsAtEventForMode(e, 'index', { intersect: false }, true);
+                                                        var point = activePoints[0]
+                                                        var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
+                                                        var index = point.index
+                                                        var result = diffChartClick["rpmsChart-rpms"].config.data.labels[index]
+                                                        var buildId = result.substring(result.lastIndexOf(":") + 1)
+                                                        window.open("" + buildId + "/rpms/#rpms", "_blank");
+                                                }
                                         }
                                 };
                                 // Get the context of the canvas element we want to select
@@ -291,7 +291,7 @@
                                 },
                                 options: {
                                         plugins: {
-                                                legend: {display:false}
+                                                legend: { display: false }
                                         }
                                         ,
                                         interaction: {
@@ -299,13 +299,13 @@
                                                 intersect: false
                                         },
                                         onClick: (e) => {
-                                                var activePoints = jckErrorsChart.getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var activePoints = jckErrorsChart.getElementsAtEventForMode(e, 'index', { intersect: false }, true);
                                                 var point = activePoints[0]
                                                 var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
                                                 var index = point.index
                                                 var result = jckErrorsChart.config.data.labels[index]
-                                                var buildId = result.substring(result.lastIndexOf(":")+1)
-                                                window.open(""+buildId+"/java-reports", "_blank");
+                                                var buildId = result.substring(result.lastIndexOf(":") + 1)
+                                                window.open("" + buildId + "/java-reports", "_blank");
                                         }
                                 }
                         }
@@ -383,20 +383,20 @@
                                 },
                                 options: {
                                         plugins: {
-                                                legend: {display:false}
+                                                legend: { display: false }
                                         },
                                         interaction: {
                                                 mode: 'index',
                                                 intersect: false
                                         },
                                         onClick: (e) => {
-                                                var activePoints = jckPassedChartTck.getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var activePoints = jckPassedChartTck.getElementsAtEventForMode(e, 'index', { intersect: false }, true);
                                                 var point = activePoints[0]
                                                 var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
                                                 var index = point.index
                                                 var result = jckPassedChartTck.config.data.labels[index]
-                                                var buildId = result.substring(result.lastIndexOf(":")+1)
-                                                window.open(""+buildId+"/java-reports", "_blank");
+                                                var buildId = result.substring(result.lastIndexOf(":") + 1)
+                                                window.open("" + buildId + "/java-reports", "_blank");
                                         }
                                 }
                         };
@@ -427,8 +427,8 @@
                                                         label: "Improvements",
                                                         backgroundColor: "rgba(0,220,0,0.5)",
                                                         borderColor: "rgba(0,220,0,0.8)",
-                                                        borderWidth:2,
-                                                        barThickness:20,
+                                                        borderWidth: 2,
+                                                        barThickness: 20,
                                                         hoverBackgroundColor: "rgba(0,220,0,0.75)",
                                                         hoverBorderColor: "rgba(0,220,0,1)",
                                                         data: [
@@ -449,8 +449,8 @@
                                                         label: "Regressions",
                                                         backgroundColor: "rgba(220,0,0,0.5)",
                                                         borderColor: "rgba(220,0,0,0.8)",
-                                                        borderWidth:2,
-                                                        barThickness:20,
+                                                        borderWidth: 2,
+                                                        barThickness: 20,
                                                         hoverBackgroundColor: "rgba(220,0,0,0.75)",
                                                         hoverBorderColor: "rgba(220,0,0,1)",
                                                         data: [
@@ -471,20 +471,20 @@
                                 },
                                 options: {
                                         plugins: {
-                                                legend: {display:false}
+                                                legend: { display: false }
                                         },
                                         interaction: {
                                                 mode: 'index',
                                                 intersect: false
                                         },
                                         onClick: (e) => {
-                                                var activePoints = jckRegressions.getElementsAtEventForMode(e, 'index', {intersect:false},true);
+                                                var activePoints = jckRegressions.getElementsAtEventForMode(e, 'index', { intersect: false }, true);
                                                 var point = activePoints[0]
                                                 var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
                                                 var index = point.index
                                                 var result = jckRegressions.config.data.labels[index]
-                                                var buildId = result.substring(result.lastIndexOf(":")+1)
-                                                window.open(""+buildId+"/java-reports", "_blank");
+                                                var buildId = result.substring(result.lastIndexOf(":") + 1)
+                                                window.open("" + buildId + "/java-reports", "_blank");
                                         }
                                 }
                         };
