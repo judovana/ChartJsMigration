@@ -8,8 +8,25 @@
   <li><a href="impl/index1.html">chart.js 1</a></li>
     <li><a href="impl/index2.html">chart.js 2</a></li>
         <li><a href="impl/index3.html">chart.js 3</a></li>
-            <li><a href="impl/index4.html">chart.js 4</a></li>
+            <li><a href="impl/index4.html">chart.js 4</a> (decommisioned)</li>
             <li><a href="impl/index4-umd.html">chart.umd.js 4</a></li>
+ </ul>
+ <h3>Issue with <a href="http://prototypejs.org">prototype.js</a></h3>
+ resources: 
+ <ul>
+  <li><a href="https://groups.google.com/g/jenkinsci-dev/c/egxqt4cAwF8"> 2018 mentions it on jenkinsci-dev group</a> This mentions, update to 1.7.3 is fixing the issue. It did nto worked for me</li>
+  <li><a href="https://github.com/jenkinsci/jenkins/pull/3277"></a>relevant to above PR to bump jenkins protype.js from 1.7 to 1.7.3. Caused issues, was reverted, afaik jenkins isstill on 1.7</li>
+  <li><a href="https://stackoverflow.com/questions/49773719/why-chart-js-library-stops-working-if-i-modify-object-prototype"> 2019 stackoweeflow exact issue (with possible solution)</a></li>
+  <li><a href="https://github.com/chartjs/Chart.js/issues/7935"> 2020, github issue for chartjs. Not 100% related, by mention security issues and is about same function</a></li>
+  <li><a href="https://vulners.com/osv/OSV:GHSA-H68Q-55JF-X68W">One of the few CVEs related to chart.js prototyep polution</a></li>
+ </ul
+ Below html pages are using protype.js 1.7 - the same as jenkins have, but all other prototype.js have same traces
+  <ul>
+  <li><a href="impl/index1-deprototyped.html">chart.js 1 with prototype.js-1.7 loaded</a> - works always</li>
+    <li><a href="impl/index2-deprototyped.html">chart.js 2 with prototype.js-1.7 loaded</a> different trace then 3+4</li>
+        <li><a href="impl/index3-deprototyped.html">chart.js 3 with prototype.js-1.7 loaded</a> smem issue with all known prototype.js versions</li>
+            <li><a href="impl/index4-deprototyped.html">chart.js 4 with prototype.js-1.7 loaded</a> (decommisioned)</li>
+            <li><a href="impl/index4-umd-deprototyped.html">chart.umd.js 4 with prototype.js-1.7 loaded</a> smem issue with all known prototype.js versions</li>
  </ul>
 </body>
 
