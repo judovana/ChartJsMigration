@@ -74,11 +74,12 @@
                                                 intersect: false
                                         },
                                         onClick: (e) => {
-                                                var activePoints = perfChartJsCharts["chart0"].getElementsAtEventForMode(e, 'index', { intersect: false }, true);
+                                                var lid = e.chart.canvas.id
+                                                var activePoints = perfChartJsCharts[lid].getElementsAtEventForMode(e, 'index', { intersect: false }, true);
                                                 var point = activePoints[0]
                                                 var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
                                                 var index = point.index
-                                                var result = perfChartJsCharts["chart0"].config.data.labels[index]
+                                                var result = perfChartJsCharts[lid].config.data.labels[index]
                                                 var buildId = result.substring(result.lastIndexOf(":") + 1)
                                                 window.open("" + buildId, "_blank");
                                         }
@@ -195,11 +196,12 @@
                                                         intersect: false
                                                 },
                                                 onClick: (e) => {
-                                                        var activePoints = diffChartClick["rpmsChart-rpms"].getElementsAtEventForMode(e, 'index', { intersect: false }, true);
+                                                        var lid = e.chart.canvas.id
+                                                        var activePoints = diffChartClick[lid].getElementsAtEventForMode(e, 'index', { intersect: false }, true);
                                                         var point = activePoints[0]
                                                         var datasetIndex = point.datasetIndex //labels are for all data together,  no need to look into exact dataset
                                                         var index = point.index
-                                                        var result = diffChartClick["rpmsChart-rpms"].config.data.labels[index]
+                                                        var result = diffChartClick[lid].config.data.labels[index]
                                                         var buildId = result.substring(result.lastIndexOf(":") + 1)
                                                         window.open("" + buildId + "/rpms/#rpms", "_blank");
                                                 }
